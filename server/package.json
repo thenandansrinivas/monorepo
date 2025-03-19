@@ -5,14 +5,15 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon server.js",
-    "start": "node server.js"
+   "start": "pm2 list | findstr payment && pm2 reload payment -f --update-env || pm2 start server.js --name payment -i max"
   },
   "license": "MIT",
   "dependencies": {
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "pm2": "^6.0.5"
   },
   "devDependencies": {
     "nodemon": "^3.1.9"
