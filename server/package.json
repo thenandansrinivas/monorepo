@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev nodemon server.js",
-   "start": "pm2 list | findstr payment && pm2 reload payment -f --update-env || pm2 start server.js --name payment -i max"
+   "start": "pm2 start server.js"
   },
   "license": "MIT",
   "dependencies": {
